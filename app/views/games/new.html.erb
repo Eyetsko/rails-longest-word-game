@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-space-evenly">
+<% @letters.each do |letter| %>
+<%= letter %>
+<% end %>
+</div>
+<form action="/score" method="post" data-turbo="false">
+  <input type="text" name="word" placeholder="write a word" label="what is the longest word you can make?">
+  <input type="submit">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+</form>
+</div>
